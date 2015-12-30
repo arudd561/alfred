@@ -29,7 +29,7 @@ inline void ProcessVoice(FILE *cmd, VoiceCommand &vc, char *message) {
 inline float GetVolume(string recordHW, string com_duration, bool nullout) {
     FILE *cmd;
     float vol = 0.0f;
-    string run = "arecord -D ";
+    string run = "arecord -D -c 1 ";
     run += recordHW;
     run += " -f cd -t wav -d ";
     run += com_duration;
